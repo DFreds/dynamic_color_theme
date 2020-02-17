@@ -148,6 +148,7 @@ class MyHomePage extends StatelessWidget {
                   cancelButtonText: 'NEVERMIND',
                   confirmButtonText: 'SOUNDS GOOD',
                   shouldAutoDetermineDarkMode: true,
+                  shouldShowLabel: true,
                 ),
                 onWillPop: () async {
                   DynamicColorTheme.of(context).resetToSharedPrefsValues();

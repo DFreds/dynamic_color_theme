@@ -5,7 +5,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-typedef ThemedWidgetBuilder = Widget Function(BuildContext context, ThemeData data);
+typedef ThemedWidgetBuilder = Widget Function(
+    BuildContext context, ThemeData data);
 
 typedef ThemeDataBuilder = ThemeData Function(Color color, bool isDark);
 
@@ -153,7 +154,8 @@ class DynamicColorThemeState extends State<DynamicColorTheme> {
   /// Loads the saved color from shared preferences.
   Future<Color> loadColor() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    int colorValue = prefs.getInt(_colorSharedPreferencesKey) ?? widget.defaultColor.value;
+    int colorValue =
+        prefs.getInt(_colorSharedPreferencesKey) ?? widget.defaultColor.value;
     return Color(colorValue);
   }
 

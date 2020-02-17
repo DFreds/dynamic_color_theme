@@ -1,7 +1,6 @@
 import 'package:dynamic_color_theme/dynamic_color_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_colorpicker/flutter_colorpicker.dart';
-import 'package:flutter_colorpicker/utils.dart';
 
 class ColorPickerDialog extends StatefulWidget {
   ColorPickerDialog({
@@ -11,6 +10,7 @@ class ColorPickerDialog extends StatefulWidget {
     this.cancelButtonText = 'CANCEL',
     this.confirmButtonText = 'CONFIRM',
     this.shouldAutoDetermineDarkMode = true,
+    this.shouldShowLabel = false,
   });
 
   /// The default color when reset is tapped in the dialog.
@@ -38,6 +38,11 @@ class ColorPickerDialog extends StatefulWidget {
   ///
   /// By default, it is set to true.
   final bool shouldAutoDetermineDarkMode;
+
+  /// Determines if the picker should show the HEX/RGB/HSV/HSL values.
+  ///
+  /// By default, it is set to false.
+  final bool shouldShowLabel;
 
   @override
   _ColorPickerDialogState createState() => _ColorPickerDialogState();
@@ -92,7 +97,7 @@ class _ColorPickerDialogState extends State<ColorPickerDialog> {
         child: ColorPicker(
           displayThumbColor: true,
           enableAlpha: false,
-          enableLabel: false,
+          showLabel: widget.shouldShowLabel,
           onColorChanged: (Color color) {
             setState(() {
               pickedColor = color;
