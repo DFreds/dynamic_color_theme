@@ -6,7 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 typedef ThemedWidgetBuilder = Widget Function(
-    BuildContext context, ThemeData data);
+  BuildContext context,
+  ThemeData data,
+);
 
 typedef ThemeDataBuilder = ThemeData Function(Color color, bool isDark);
 
