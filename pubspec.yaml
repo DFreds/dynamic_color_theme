@@ -1,6 +1,6 @@
 name: dynamic_color_theme
 description: Dynamically change your color theme, including light and dark mode. Persist the colors across restarts.
-version: 1.1.0
+version: 1.1.1
 homepage: 'https://github.com/DFreds/dynamic_color_theme'
 
 environment:

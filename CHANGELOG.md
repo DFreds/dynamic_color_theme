@@ -1,3 +1,7 @@
+## [1.1.1] - July 13, 2020.
+
+* Update the shared preferences and color picker library
+
 ## [1.1.0] - February 17, 2020.
 
 * Update the color picker dialog library

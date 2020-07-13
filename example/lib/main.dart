@@ -38,6 +38,9 @@ class MyApp extends StatelessWidget {
       accentTextTheme: _buildTextTheme(base.accentTextTheme, accentColor),
       cardColor: primaryColor,
       cursorColor: accentColor,
+      floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
+        backgroundColor: accentColor,
+      ),
       iconTheme: base.iconTheme.copyWith(
         color: accentColor,
       ),
