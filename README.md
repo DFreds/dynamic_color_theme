@@ -4,7 +4,7 @@
 
 This package allows you to dynamically change your color theme and will automatically switch between light and dark mode based on the new color. Additionally, the color values can be persisted across restarts by saving both the color and dark mode to shared preferences.
 
-## Installation 
+## Installation
 
 ```yaml
 dependencies:
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
       },
     );
   }
-  
+
   // Example buildTheme method
   ThemeData _buildTheme(Color accentColor, bool isDark) {
     final ThemeData base = isDark ? ThemeData.dark() : ThemeData.light();
@@ -63,7 +63,9 @@ class MyApp extends StatelessWidget {
       accentColor: accentColor,
       accentTextTheme: _buildTextTheme(base.accentTextTheme, accentColor),
       cardColor: primaryColor,
-      cursorColor: accentColor,
+      floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
+        backgroundColor: accentColor,
+      ),
       iconTheme: base.iconTheme.copyWith(
         color: accentColor,
       ),
@@ -73,8 +75,7 @@ class MyApp extends StatelessWidget {
       ),
       primaryTextTheme: _buildTextTheme(base.primaryTextTheme, accentColor),
       scaffoldBackgroundColor: primaryColor,
-      textSelectionColor: isDark ? kDarkGrey : kLightGrey,
-      textSelectionHandleColor: accentColor,
+      textSelectionTheme: _buildTextSelectionTheme(base.textSelectionTheme, accentColor, isDark),
       textTheme: _buildTextTheme(base.textTheme, accentColor),
     );
   }
@@ -109,6 +110,14 @@ class MyApp extends StatelessWidget {
         fontSize: 20,
         fontWeight: FontWeight.bold,
       ),
+    );
+  }
+
+  TextSelectionThemeData _buildTextSelectionTheme(TextSelectionThemeData base, Color accentColor, bool isDark) {
+    return base.copyWith(
+      cursorColor: accentColor,
+      selectionColor: isDark ? kDarkGrey : kLightGrey,
+      selectionHandleColor: accentColor,
     );
   }
 }
