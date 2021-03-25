@@ -37,7 +37,6 @@ class MyApp extends StatelessWidget {
       accentColor: accentColor,
       accentTextTheme: _buildTextTheme(base.accentTextTheme, accentColor),
       cardColor: primaryColor,
-      cursorColor: accentColor,
       floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
         backgroundColor: accentColor,
       ),
@@ -50,8 +49,7 @@ class MyApp extends StatelessWidget {
       ),
       primaryTextTheme: _buildTextTheme(base.primaryTextTheme, accentColor),
       scaffoldBackgroundColor: primaryColor,
-      textSelectionColor: isDark ? kDarkGrey : kLightGrey,
-      textSelectionHandleColor: accentColor,
+      textSelectionTheme: _buildTextSelectionTheme(base.textSelectionTheme, accentColor, isDark),
       textTheme: _buildTextTheme(base.textTheme, accentColor),
     );
   }
@@ -88,6 +86,14 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
+
+  TextSelectionThemeData _buildTextSelectionTheme(TextSelectionThemeData base, Color accentColor, bool isDark) {
+    return base.copyWith(
+      cursorColor: accentColor,
+      selectionColor: isDark ? kDarkGrey : kLightGrey,
+      selectionHandleColor: accentColor,
+    );
+  }
 }
 
 class MyHomePage extends StatelessWidget {
@@ -110,7 +116,7 @@ class MyHomePage extends StatelessWidget {
           Center(
             child: Text('Color is $color and isDark is $isDark'),
           ),
-          FlatButton(
+          TextButton(
             child: Text(
               'Flip dark mode',
               style: Theme.of(context).textTheme.button,
@@ -122,7 +128,7 @@ class MyHomePage extends StatelessWidget {
               );
             },
           ),
-          FlatButton(
+          TextButton(
             child: Text(
               'Set color to Fuschia!',
               style: Theme.of(context).textTheme.button,

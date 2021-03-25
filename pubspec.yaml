@@ -10,8 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_colorpicker: ^0.3.4
-  shared_preferences: ^0.5.8
+  flutter_colorpicker: ^0.4.0
+  shared_preferences: ^2.0.5
 
 dev_dependencies:
   flutter_test:
