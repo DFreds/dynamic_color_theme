@@ -14,11 +14,11 @@ typedef ThemeDataBuilder = ThemeData Function(Color color, bool isDark);
 
 class DynamicColorTheme extends StatefulWidget {
   const DynamicColorTheme({
-    Key key,
-    @required this.data,
-    @required this.themedWidgetBuilder,
-    @required this.defaultColor,
-    @required this.defaultIsDark,
+    Key? key,
+    required this.data,
+    required this.themedWidgetBuilder,
+    required this.defaultColor,
+    required this.defaultIsDark,
   }) : super(key: key);
 
   /// Function that provides the theme and expects a widget to be returned.
@@ -43,16 +43,16 @@ class DynamicColorTheme extends StatefulWidget {
   @override
   DynamicColorThemeState createState() => DynamicColorThemeState();
 
-  static DynamicColorThemeState of(BuildContext context) {
-    return context.findAncestorStateOfType<DynamicColorThemeState>();
+  static DynamicColorThemeState/*!*/ of(BuildContext context) {
+    return context.findAncestorStateOfType<DynamicColorThemeState>()!;
   }
 }
 
 class DynamicColorThemeState extends State<DynamicColorTheme> {
-  ThemeData _data;
+  late ThemeData _data;
 
-  Color _color;
-  bool _isDark;
+  late Color _color;
+  late bool _isDark;
 
   static const String _colorSharedPreferencesKey = 'color';
   static const String _isDarkSharedPreferencesKey = 'isDarkMode';
@@ -102,8 +102,8 @@ class DynamicColorThemeState extends State<DynamicColorTheme> {
   ///
   /// This triggers a rebuild of the widgets utilizing the `DynamicColorTheme`.
   Future<void> setColor({
-    @required Color color,
-    @required bool shouldSave,
+    required Color color,
+    required bool shouldSave,
   }) async {
     setState(() {
       _data = widget.data(color, _isDark);
@@ -121,8 +121,8 @@ class DynamicColorThemeState extends State<DynamicColorTheme> {
   ///
   /// This triggers a rebuild of the widgets utilizing the `DynamicColorTheme`.
   Future<void> setIsDark({
-    @required bool isDark,
-    @required bool shouldSave,
+    required bool isDark,
+    required bool shouldSave,
   }) async {
     setState(() {
       _data = widget.data(_color, isDark);
