@@ -56,30 +56,30 @@ class MyApp extends StatelessWidget {
 
   TextTheme _buildTextTheme(TextTheme base, Color color) {
     return base.copyWith(
-      bodyText2: base.bodyText2.copyWith(
+      bodyText2: base.bodyText2!.copyWith(
         fontSize: 16,
       ),
-      bodyText1: base.bodyText1.copyWith(
+      bodyText1: base.bodyText1!.copyWith(
         color: color,
         fontSize: 16,
         fontWeight: FontWeight.bold,
       ),
-      button: base.button.copyWith(
+      button: base.button!.copyWith(
         color: color,
       ),
-      caption: base.caption.copyWith(
+      caption: base.caption!.copyWith(
         color: color,
         fontSize: 14,
       ),
-      headline5: base.headline5.copyWith(
+      headline5: base.headline5!.copyWith(
         color: color,
         fontSize: 24,
       ),
-      subtitle1: base.subtitle1.copyWith(
+      subtitle1: base.subtitle1!.copyWith(
         color: color,
         fontSize: 18,
       ),
-      headline6: base.headline6.copyWith(
+      headline6: base.headline6!.copyWith(
         color: color,
         fontSize: 20,
         fontWeight: FontWeight.bold,
@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
