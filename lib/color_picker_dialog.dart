@@ -4,8 +4,8 @@ import 'package:flutter_colorpicker/flutter_colorpicker.dart';
 
 class ColorPickerDialog extends StatefulWidget {
   ColorPickerDialog({
-    @required this.defaultColor,
-    @required this.defaultIsDark,
+    required this.defaultColor,
+    required this.defaultIsDark,
     this.title = 'Choose a Color',
     this.cancelButtonText = 'CANCEL',
     this.confirmButtonText = 'CONFIRM',
@@ -49,8 +49,8 @@ class ColorPickerDialog extends StatefulWidget {
 }
 
 class _ColorPickerDialogState extends State<ColorPickerDialog> {
-  bool isDark;
-  Color pickedColor;
+  late bool isDark;
+  late Color pickedColor;
 
   @override
   void initState() {

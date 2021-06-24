@@ -1,3 +1,7 @@
+## [1.2.0] - June 21, 2021,
+
+* Updated the Plugin to Null-Safety
+
 ## [1.1.2] - March 25, 2021.
 
 * Update the shared preferences and color picker library
