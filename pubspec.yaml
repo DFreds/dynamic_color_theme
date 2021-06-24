@@ -1,6 +1,6 @@
 name: dynamic_color_theme
 description: Dynamically change your color theme, including light and dark mode. Persist the colors across restarts.
-version: 1.2.0
+version: 2.0.0
 homepage: 'https://github.com/DFreds/dynamic_color_theme'
 
 
@@ -11,10 +11,8 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
   flutter_colorpicker: ^0.4.0
   shared_preferences: ^2.0.6
 

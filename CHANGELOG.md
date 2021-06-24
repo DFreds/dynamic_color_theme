@@ -1,6 +1,6 @@
-## [1.2.0] - June 21, 2021,
+## [2.0.0] - June 24, 2021
 
-* Updated the Plugin to Null-Safety
+* Updated the plugin to null-safety
 
 ## [1.1.2] - March 25, 2021.
 

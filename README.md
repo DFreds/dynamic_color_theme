@@ -8,7 +8,7 @@ This package allows you to dynamically change your color theme and will automati
 
 ```yaml
 dependencies:
-    dynamic_color_theme: ^1.1.0
+    dynamic_color_theme: ^2.0.0
 ```
 
 Import the theme as shown below.
